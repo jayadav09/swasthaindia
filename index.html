@@ -96,9 +96,58 @@
       font-size: 0.9rem;
       margin-top: 40px;
     }
+    /* Popup styles */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 2px solid #0076ce;
+      border-radius: 10px;
+      padding: 20px;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      max-width: 90%;
+      text-align: center;
+    }
+    #popup h3 {
+      margin-top: 0;
+    }
+    #popup button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #0076ce;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #popup button:hover {
+      background-color: #005b9e;
+    }
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+    }
   </style>
 </head>
 <body>
+  <div id="overlay"></div>
+  <div id="popup">
+    <h3>Enquiry Form</h3>
+    <p>Need a health service or product? Let's talk!</p>
+    <a href="https://wa.me/919911990556" class="cta-button">📞 Chat on WhatsApp</a><br/>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
   <header>
     <img src="logo.png" alt="SwasthaIndia Logo" />
     <h1>Welcome to SwasthaIndia</h1>
@@ -146,7 +195,7 @@
       <h3>Get in Touch</h3>
       <p>
         📞 <strong>Phone:</strong> +91-9911990556<br/>
-        📧 <strong>Email:</strong> <a href="mailto:info@swasthaindia.in">info@swasthaindia.in</a><br/>
+        📧 <strong>Email:</strong> <a href="mailto:SwasthaIndia09@gmail.com">SwasthaIndia09@gmail.com</a><br/>
         📍 <strong>Address:</strong> E-6/158 Sangam Vihar, New Delhi - 110080
       </p>
     </section>
@@ -155,5 +204,19 @@
   <footer>
     &copy; 2025 SwasthaIndia. All rights reserved.
   </footer>
+
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }, 2000);
+    };
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
 </body>
 </html>

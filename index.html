@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="SwasthaIndia - Your trusted partner for blood tests, surgical supplies, and first aid kits. Care at your doorstep."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SwasthaIndia - Your trusted partner for blood tests, surgical supplies, and first aid kits. Care at your doorstep." />
   <title>Welcome to SwasthaIndia</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
@@ -20,6 +20,10 @@
       padding: 20px 40px;
       text-align: center;
     }
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
     header h1 {
       margin: 0;
       font-size: 2.2rem;
@@ -28,9 +32,24 @@
       margin-top: 5px;
       font-size: 1.1rem;
     }
+    nav {
+      background: #005b9e;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     main {
       padding: 40px 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       text-align: center;
     }
@@ -56,36 +75,85 @@
     .cta-button:hover {
       background-color: #005b9e;
     }
+    section {
+      margin-top: 60px;
+      text-align: left;
+    }
+    section h3 {
+      color: #0076ce;
+      font-size: 1.5rem;
+    }
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+      line-height: 1.8;
+    }
     footer {
       background-color: #e0ecf4;
       color: #555;
       padding: 15px;
       text-align: center;
       font-size: 0.9rem;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-
   <header>
+    <img src="logo.png" alt="SwasthaIndia Logo" />
     <h1>Welcome to SwasthaIndia</h1>
     <p>Care at Your Doorstep</p>
   </header>
 
-  <main>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="home">
     <h2>Your Trusted Partner in Health</h2>
     <p>
       SwasthaIndia delivers <strong>blood tests</strong>, <strong>surgical supplies</strong>,
-      and <strong>first aid kits</strong> directly to your home or business.
-      <br/>Affordable, accessible, and reliable – healthcare made easy.
+      and <strong>first aid kits</strong> directly to your home or business.<br/>
+      Affordable, accessible, and reliable – healthcare made easy.
     </p>
-
     <a href="https://wa.me/919911990556" class="cta-button">📞 Contact Us on WhatsApp</a>
+
+    <section id="about">
+      <h3>About Us</h3>
+      <p>
+        SwasthaIndia is a next-generation healthcare provider based in India,
+        dedicated to bringing high-quality diagnostics and health supplies
+        to every doorstep. We believe healthcare should be simple, affordable,
+        and just a call away.
+      </p>
+    </section>
+
+    <section id="services">
+      <h3>Our Services</h3>
+      <ul>
+        <li>Home Blood Collection for Diagnostics</li>
+        <li>Surgical and Medical Supply Delivery</li>
+        <li>Corporate First Aid Kit Supply</li>
+        <li>Travel & Emergency Health Packs</li>
+        <li>Custom Medical Kits for Events & Institutions</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h3>Get in Touch</h3>
+      <p>
+        📞 <strong>Phone:</strong> +91-9911990556<br/>
+        📧 <strong>Email:</strong> <a href="mailto:SwasthaIndia09@gmail.com">SwasthaIndia09@gmail.com</a><br/>
+        📍 <strong>Address:</strong> E-6/158 Sangam Vihar, New Delhi - 110080
+      </p>
+    </section>
   </main>
 
   <footer>
     &copy; 2025 SwasthaIndia. All rights reserved.
   </footer>
-
 </body>
 </html>

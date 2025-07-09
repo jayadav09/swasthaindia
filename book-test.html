@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Blood Test | SwasthaIndia</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f5f9fc;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #00796b;
+      margin-bottom: 20px;
+    }
+
+    .floating-banner {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background-color: #004d40;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      padding: 12px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .floating-banner .wa-link {
+      color: #ffeb3b;
+      font-weight: bold;
+      text-decoration: none;
+      margin-left: 6px;
+    }
+
+    .floating-banner .wa-link:hover {
+      text-decoration: underline;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .test-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #004d40;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 15px;
+      color: #888;
+    }
+
+    .offer {
+      font-size: 22px;
+      color: #d32f2f;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .book-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .book-btn:hover {
+      background-color: #004d40;
+    }
+
+    .test-details {
+      margin-top: 12px;
+      text-align: left;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+      display: none;
+    }
+
+    .wa-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .wa-float img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+
+  <script>
+    function toggleDetails(id) {
+      var el = document.getElementById(id);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</head>
+<body>
+
+  <!-- WhatsApp Banner -->
+  <div class="floating-banner">
+    💬 Looking for more tests or full body packages?
+    <strong> Chat with us</strong> on
+    <a href="https://wa.me/919911990556" target="_blank" class="wa-link">+91-9911990556</a>
+  </div>
+
+  <h1>Book a Blood Test</h1>
+
+  <!-- Sample Categories Below -->
+  <h2>Diabetes Tests</h2>
+  <div class="packages">
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('hba1c')">HbA1c</div>
+      <div class="price"><s>₹1200</s></div>
+      <div class="offer">₹600 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20HbA1c" target="_blank">Book Now</a>
+      <div class="test-details" id="hba1c">
+        <p><strong>Description:</strong> HbA1c test shows average blood sugar levels over the past 2–3 months. It is crucial for diagnosing and monitoring diabetes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('glucose_fasting')">Glucose Fasting</div>
+      <div class="price"><s>₹110</s></div>
+      <div class="offer">₹55 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20Glucose%20Fasting" target="_blank">Book Now</a>
+      <div class="test-details" id="glucose_fasting">
+        <p><strong>Description:</strong> Checks blood sugar after overnight fasting.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('glucose_post')">Glucose Post Prandial</div>
+      <div class="price"><s>₹110</s></div>
+      <div class="offer">₹55 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20Glucose%20Post%20Prandial" target="_blank">Book Now</a>
+      <div class="test-details" id="glucose_post">
+        <p><strong>Description:</strong> Measures blood sugar 2 hours after a meal.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('insulin_fasting')">Insulin (Fasting)</div>
+      <div class="price"><s>₹1500</s></div>
+      <div class="offer">₹750 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20Insulin%20(Fasting)" target="_blank">Book Now</a>
+      <div class="test-details" id="insulin_fasting">
+        <p><strong>Description:</strong> Checks insulin levels in the blood during fasting.</p>
+      </div>
+    </div>
+  </div>
+  <h2>Vitamin Tests</h2>
+  <div class="packages">
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('vitamin_d')">Vitamin D</div>
+      <div class="price"><s>₹2000</s></div>
+      <div class="offer">₹1000 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20Vitamin%20D" target="_blank">Book Now</a>
+      <div class="test-details" id="vitamin_d">
+        <p><strong>Description:</strong> Bone and immune health.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('vitamin_b12')">Vitamin B12</div>
+      <div class="price"><s>₹2000</s></div>
+      <div class="offer">₹1000 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20Vitamin%20B12" target="_blank">Book Now</a>
+      <div class="test-details" id="vitamin_b12">
+        <p><strong>Description:</strong> Nerve function and blood formation.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>CBC & Blood Count</h2>
+  <div class="packages">
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('cbc')">CBC</div>
+      <div class="price"><s>₹600</s></div>
+      <div class="offer">₹350 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20CBC" target="_blank">Book Now</a>
+      <div class="test-details" id="cbc">
+        <p><strong>Description:</strong> Red/white cells, hemoglobin check.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Kidney Function Tests</h2>
+  <div class="packages">
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('creatinine')">Creatinine + eGFR</div>
+      <div class="price"><s>₹220</s></div>
+      <div class="offer">₹110 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20Creatinine" target="_blank">Book Now</a>
+      <div class="test-details" id="creatinine">
+        <p><strong>Description:</strong> Kidney filtration rate.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('rft')">Renal Function Test (RFT)</div>
+      <div class="price"><s>₹550</s></div>
+      <div class="offer">₹275 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20RFT" target="_blank">Book Now</a>
+      <div class="test-details" id="rft">
+        <p><strong>Description:</strong> Overall kidney health panel.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Lipid Profile</h2>
+  <div class="packages">
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('lipid')">Lipid Profile</div>
+      <div class="price"><s>₹920</s></div>
+      <div class="offer">₹460 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20Lipid%20Profile" target="_blank">Book Now</a>
+      <div class="test-details" id="lipid">
+        <p><strong>Description:</strong> Cholesterol, HDL, LDL, triglycerides.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Liver Function Tests</h2>
+  <div class="packages">
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('lft')">Liver Function Test</div>
+      <div class="price"><s>₹800</s></div>
+      <div class="offer">₹400 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20LFT" target="_blank">Book Now</a>
+      <div class="test-details" id="lft">
+        <p><strong>Description:</strong> Liver enzymes and bilirubin assessment.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Thyroid</h2>
+  <div class="packages">
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('tsh')">TSH</div>
+      <div class="price"><s>₹400</s></div>
+      <div class="offer">₹200 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20TSH" target="_blank">Book Now</a>
+      <div class="test-details" id="tsh">
+        <p><strong>Description:</strong> Thyroid-stimulating hormone level.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="test-name" onclick="toggleDetails('t3t4')">T3 & T4</div>
+      <div class="price"><s>₹800</s></div>
+      <div class="offer">₹400 Only</div>
+      <a class="book-btn" href="https://wa.me/919911990556?text=I%20want%20to%20book%20T3%20%26%20T4" target="_blank">Book Now</a>
+      <div class="test-details" id="t3t4">
+        <p><strong>Description:</strong> Thyroid hormone balance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919911990556" class="wa-float" target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
+  </a>
+
+</body>
+</html>
+
+  <!-- Add more sections the same way -->
+  <!-- Vitamin Tests, CBC, KFT, Lipid etc. -->
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919911990556" class="wa-float" target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
+  </a>
+
+</body>
+</html>

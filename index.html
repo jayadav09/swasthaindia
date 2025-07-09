@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Book affordable blood tests & full body packages at home with SwasthaIndia. NABL certified labs, quick reports, doorstep collection.">
+  <meta name="keywords" content="blood test, health checkup, SwasthaIndia, home sample collection, NABL labs">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <!-- Google Analytics (placeholder) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwasthaIndia - Care at Your Doorstep</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body { background: #f5f9fc; color: #333; }
+    header {
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #00796b;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #004d40;
+    }
+    .hero {
+      background: linear-gradient(to right, #e0f2f1, #ffffff);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #004d40;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      padding: 14px 28px;
+      background: #00796b;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #004d40;
+      transform: scale(1.05);
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #00796b;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+    }
+    .card i {
+      font-size: 32px;
+      color: #00796b;
+      margin-bottom: 12px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover i {
+      transform: scale(1.2);
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .testimonial-section {
+      background: #ffffff;
+    }
+    .testimonial-carousel {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-slide {
+      display: none;
+      font-style: italic;
+      padding: 20px;
+      transition: opacity 0.5s;
+    }
+    .testimonial-slide.active {
+      display: block;
+    }
+    .whatsapp-banner {
+      background: #004d40;
+      color: white;
+      padding: 18px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .whatsapp-banner a {
+      color: #ffeb3b;
+      font-weight: bold;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+    footer {
+      background: #004d40;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+.popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 121, 107, 0.3);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .popup-content button {
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .popup-content h2 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .popup-content p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: #999;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #00796b;
+    }
+
+    .input-with-icon {
+      position: relative;
+      margin: 12px 0;
+    }
+
+    .input-with-icon i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #777;
+    }
+
+    .input-with-icon input {
+      padding-left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.svg" alt="SwasthaIndia Logo" height="50">
+    </div>
+    <nav>
+      <a href="book-test.html">Book Test</a>
+      <a href="my-packages.html">Packages</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <h1>Care at Your Doorstep</h1>
+    <p>Book blood tests, full body packages, and more — from the comfort of your home.</p>
+    <a href="book-test.html" class="cta-button">Book a Test Now</a>
+  </section>
+
+  <section class="section" data-aos="fade-up">
+    <h2>Why Choose SwasthaIndia?</h2>
+    <div class="cards">
+      <div class="card" data-aos="zoom-in"><i class="fas fa-vials"></i><h3>NABL Certified Labs</h3></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-user-nurse"></i><h3>Home Sample Collection</h3></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-clock"></i><h3>24-Hour Report Delivery</h3></div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-rupee-sign"></i><h3>Affordable Pricing</h3></div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="fade-up">
+    <h2>Popular Test Packages</h2>
+    <div class="cards">
+      <div class="card" data-aos="fade-up"><h3>Full Body Checkup – Basic</h3><p>₹1299 <s>₹2598</s></p></div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100"><h3>Full Body Checkup – Advanced</h3><p>₹1899 <s>₹3798</s></p></div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200"><h3>Diabetes Screening</h3><p>₹750 <s>₹1500</s></p></div>
+    </div>
+    <br>
+    <a href="my-packages.html" class="cta-button" data-aos="zoom-in">View All Packages</a>
+  </section>
+
+  <section class="section" data-aos="fade-up">
+    <h2>How It Works</h2>
+    <div class="cards">
+      <div class="card" data-aos="fade-up"><i class="fas fa-calendar-check"></i><h3>1. Book a Test</h3><p>Choose your test or package and book online or via WhatsApp.</p></div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-vial"></i><h3>2. Sample Collection</h3><p>Our phlebotomist visits your home at the scheduled time.</p></div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-file-medical"></i><h3>3. Get Your Report</h3><p>Receive your report digitally within 24–48 hours.</p></div>
+    </div>
+  </section>
+
+  <section class="section testimonial-section" data-aos="fade-in">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-carousel" id="testimonialCarousel">
+      <div class="testimonial-slide active">“The collection was timely and very hygienic. Great service!” – <strong>Ravi M.</strong></div>
+      <div class="testimonial-slide">“I booked a full body test for my parents. Professional and quick!” – <strong>Megha S.</strong></div>
+      <div class="testimonial-slide">“Affordable prices and excellent communication on WhatsApp.” – <strong>Pooja K.</strong></div>
+    </div>
+  </section>
+
+  <section class="section" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>📅 How can I book a test?</h3>
+        <p>You can book via our website or WhatsApp at +91-9911990556.</p>
+      </div>
+      <div class="card">
+        <h3>🧪 Do you provide home sample collection?</h3>
+        <p>Yes! Our certified phlebotomists collect samples at your doorstep.</p>
+      </div>
+      <div class="card">
+        <h3>⏱ How long does it take to receive my report?</h3>
+        <p>Reports are typically delivered within 24–48 hours.</p>
+      </div>
+      <div class="card">
+        <h3>💳 How can I pay?</h3>
+        <p>You can pay online, by UPI, or cash after sample collection.</p>
+      </div>
+      <div class="card">
+        <h3>🧬 Are your labs certified?</h3>
+        <p>Yes, we partner only with NABL/ISO certified labs to ensure accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="whatsapp-banner" data-aos="fade-up">
+    Need help booking? Chat with us on WhatsApp:
+    <a href="https://wa.me/919911990556" target="_blank">+91-9911990556</a>
+  </div>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 SwasthaIndia. All rights reserved.</p>
+    <p>Made with ❤️ in India | Follow us on 
+      <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a> 
+      <a href="#" style="color:#fff;"><i class="fab fa-facebook"></i></a> 
+      <a href="#" style="color:#fff;"><i class="fab fa-linkedin"></i></a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 4000);
+  </script>
+ <!-- Popup -->
+  <div id="callbackPopup" class="popup-overlay">
+    <div class="popup-content" id="formContent">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Request a Call Back</h2>
+      <p>Free Diet Report + Lab Booking Help</p>
+      <form id="callbackForm" onsubmit="submitToGoogleSheet(event)">
+        <div class="input-with-icon">
+          <i class="fas fa-user"></i>
+          <input type="text" id="name" name="Name" placeholder="Enter Name" required />
+        </div>
+        <div class="input-with-icon">
+          <i class="fas fa-phone"></i>
+          <input type="tel" id="mobile" name="Mobile" placeholder="Enter Mobile Number" required />
+        </div>
+        <div class="input-with-icon">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" name="Email" placeholder="Enter Email (optional)" />
+        </div>
+        <button type="submit">Request Call Back</button>
+      </form>
+    </div>
+
+    <div class="popup-content" id="thankYouContent" style="display:none;">
+      <h2>Thank You!</h2>
+      <p>We’ll call you back shortly.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+<a href="https://wa.me/919911990556" target="_blank" style="position:fixed;width:60px;height:60px;bottom:20px;right:20px;background:#25D366;border-radius:50px;text-align:center;box-shadow:0 4px 8px rgba(0,0,0,0.3);z-index:9999;">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" style="width:30px;margin-top:15px;" />
+  </a>
+
+  <script>
+
+    const formUrl = "https://script.google.com/macros/s/AKfycbwTNz_4qqA3m0hI4sOtaGFdQwxXGVP6Fn4OhI6WOVov6G7IflGl-PtPG0x3mACkiFJDYA/exec";
+
+    function openPopup() {
+      document.getElementById("callbackPopup").style.display = "flex";
+      document.getElementById("formContent").style.display = "block";
+      document.getElementById("thankYouContent").style.display = "none";
+    }
+
+    function closePopup() {
+      document.getElementById("callbackPopup").style.display = "none";
+    }
+
+    function submitToGoogleSheet(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const mobile = document.getElementById("mobile").value;
+      const email = document.getElementById("email").value;
+
+      const formData = new FormData();
+      formData.append("Name", name);
+      formData.append("Mobile", mobile);
+      formData.append("Email", email);
+
+      fetch(formUrl, {
+        method: "POST",
+        body: formData,
+      })
+        .then(() => {
+          document.getElementById("formContent").style.display = "none";
+          document.getElementById("thankYouContent").style.display = "block";
+          setTimeout(closePopup, 5000);
+        })
+        .catch((error) => {
+          alert("Error! Please try again.");
+          console.error("Error submitting form", error);
+        });
+    }
+
+    window.onload = () => {
+      setTimeout(openPopup, 2000);
+    };
+  </script>
+</body>
+</html>

@@ -379,49 +379,45 @@
   </a>
 
   <script>
-  <script>
+  const formUrl = "https://script.google.com/macros/s/AKfycbwTNz_4qqA3m0hI4sOtaGFdQwxXGVP6Fn4OhI6WOVov6G7IflGl-PtPG0x3mACkiFJDYA/exec";
 
-    const formUrl = "https://script.google.com/macros/s/AKfycbwTNz_4qqA3m0hI4sOtaGFdQwxXGVP6Fn4OhI6WOVov6G7IflGl-PtPG0x3mACkiFJDYA/exec";
+  function openPopup() {
+    document.getElementById("callbackPopup").style.display = "flex";
+    document.getElementById("formContent").style.display = "block";
+    document.getElementById("thankYouContent").style.display = "none";
+  }
 
-    function openPopup() {
-      document.getElementById("callbackPopup").style.display = "flex";
-      document.getElementById("formContent").style.display = "block";
-      document.getElementById("thankYouContent").style.display = "none";
-    }
+  function closePopup() {
+    document.getElementById("callbackPopup").style.display = "none";
+  }
 
-    function closePopup() {
-      document.getElementById("callbackPopup").style.display = "none";
-    }
+  function submitToGoogleSheet(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+    const email = document.getElementById("email").value;
 
-    function submitToGoogleSheet(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const mobile = document.getElementById("mobile").value;
-      const email = document.getElementById("email").value;
+    const formData = new FormData();
+    formData.append("Name", name);
+    formData.append("Mobile", mobile);
+    formData.append("Email", email);
 
-      const formData = new FormData();
-      formData.append("Name", name);
-      formData.append("Mobile", mobile);
-      formData.append("Email", email);
+    fetch(formUrl, {
+      method: "POST",
+      body: formData,
+    }).then(response => {
+      document.getElementById("formContent").style.display = "none";
+      document.getElementById("thankYouContent").style.display = "block";
+    }).catch(error => {
+      alert("Submission failed. Please try again.");
+    });
+  }
 
-      fetch(formUrl, {
-        method: "POST",
-        body: formData,
-      })
-        .then(() => {
-          document.getElementById("formContent").style.display = "none";
-          document.getElementById("thankYouContent").style.display = "block";
-          setTimeout(closePopup, 5000);
-        })
-        .catch((error) => {
-          alert("Error! Please try again.");
-          console.error("Error submitting form", error);
-        });
-    }
+  // Auto-show popup after 2 seconds on page load
+  window.onload = function () {
+    setTimeout(openPopup, 2000);
+  };
+</script>
 
-    window.onload = () => {
-      setTimeout(openPopup, 2000);
-    };
-  </script>
 </body>
 </html>

@@ -50,43 +50,73 @@
     nav a:hover {
       color: #004d40;
     }
-    .hero {
-      background: linear-gradient(to right, #e0f2f1, #ffffff);
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #004d40;
-      margin-bottom: 16px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 24px;
-    }
-    .cta-button {
-      padding: 14px 28px;
-      background: #00796b;
-      color: white;
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .cta-button:hover {
-      background: #004d40;
-      transform: scale(1.05);
-    }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .section h2 {
-      color: #00796b;
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
+    .hero-section {
+  background: linear-gradient(120deg, #e0f7fa, #ffffff);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  color: #004d40;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.hero-btn {
+  background: #007f5f;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #005f45;
+}
+
+.hero-whatsapp {
+  margin-top: 20px;
+}
+
+.hero-whatsapp a {
+  display: inline-flex;
+  align-items: center;
+  background: #25d366;
+  padding: 10px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero-whatsapp img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 28px; }
+  .hero-btn { font-size: 16px; padding: 12px 24px; }
+}
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -379,11 +409,19 @@
     </nav>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>Care at Your Doorstep</h1>
-    <p>Book blood tests, full body packages, and more — from the comfort of your home.</p>
-    <a href="book-test.html" class="cta-button">Book a Test Now</a>
-  </section>
+  <section class="hero-section">
+  <div class="hero-inner">
+    <h1>Health Tests at Your Doorstep</h1>
+    <p>Book trusted lab tests and packages with doorstep sample collection and same-day reports.</p>
+    <a href="book-test.html" class="hero-btn">Book a Test Now</a>
+  </div>
+  <div class="hero-whatsapp">
+    <a href="https://wa.me/919911990556?text=Hi%20SwasthaIndia%2C%20I%20want%20to%20know%20more%20about%20your%20services" target="_blank">
+      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp">
+      <span>Chat on WhatsApp</span>
+    </a>
+  </div>
+</section>
   <!-- 🔍 Modern Search Section -->
 <section style="padding: 50px 20px; background-color: #f0f7ff;">
   <h2 style="text-align: center; font-size: 28px; color: #2c3e50; margin-bottom: 25px;">Search for Tests or Packages</h2>

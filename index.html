@@ -316,10 +316,20 @@
     background-position: 12px center !important;
   }
 
+  #test-container,
+  #search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 12px;
+  }
+
   .test-card, .search-card {
-    width: 100% !important;
-    max-width: 320px;
-    margin: 0 auto;
+    width: 46%;
+    max-width: 200px;
+    margin: 0;
+    flex: 0 0 auto;
   }
 
   .book-btn {
@@ -342,12 +352,6 @@
     margin-left: 4px;
   }
 
-  #test-container,
-  #search-results {
-    padding: 0 10px;
-    gap: 16px;
-  }
-
   .floating-banner {
     font-size: 13px;
     padding: 8px;
@@ -357,6 +361,7 @@
     width: 40px;
     height: 40px;
   }
+}
 }
 
   </style>

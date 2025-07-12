@@ -254,6 +254,17 @@
     <p>Book blood tests, full body packages, and more — from the comfort of your home.</p>
     <a href="book-test.html" class="cta-button">Book a Test Now</a>
   </section>
+  <!-- Popular Lab Tests & Profiles -->
+<section id="popular-tests" style="padding: 40px 20px; background: #f0f9ff;">
+  <h2 style="text-align: center; color: #004d40;">Popular Lab Tests & Profiles</h2>
+  <p style="text-align: center; font-size: 18px; color: #333;">
+    HEALTH TEST AT YOUR HOME
+  </p>
+  <div id="popular-container"
+       style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+    <!-- Cards will be inserted here -->
+  </div>
+</section>
 
   <section class="section" data-aos="fade-up">
     <h2>Why Choose SwasthaIndia?</h2>
@@ -419,6 +430,38 @@
     setTimeout(openPopup, 2000);
   };
 </script>
-
+ </script>
+<script>
+  fetch("https://script.google.com/macros/s/AKfycbx86AqCtPYZkCRGiMCl-XYWbC6UctZCQnbd7CbPloJon6y9g-jzVKH2L04-GUVwU4t7/exec")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("popular-container");
+      const popular = data.filter(test => test["Show on Homepage"] === "✅");
+      popular.forEach(test => {
+        const name = test['Test Name'];
+        const desc = test['Description'] || '';
+        const card = document.createElement("div");
+        card.className = "test-card";
+        card.style.cssText = `
+          background: #fff;
+          padding: 20px;
+          border-radius: 12px;
+          width: 220px;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+          text-align: center;
+        `;
+        card.innerHTML = `
+          <h3 style="font-size: 16px; color: #2c3e50; margin-bottom: 8px;">${name}</h3>
+          <p style="font-size: 14px; color: #555; margin-bottom: 12px;">${desc}</p>
+          <a href="https://wa.me/919911990556?text=Hi%20SwasthaIndia%2C%20I%20want%20to%20book%20the%20${encodeURIComponent(name)}%20test."
+             target="_blank"
+             style="display:inline-block; background: #007f5f; color: #fff; padding: 8px 16px; border-radius: 6px; font-size: 14px; text-decoration: none;">
+            Book Now
+          </a>
+        `;
+        container.appendChild(card);
+      });
+    });
+</script>
 </body>
 </html>

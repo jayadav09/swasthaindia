@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- ✅ Sticky White Header -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- SEO Meta Tags -->
-<title>SwasthaIndia – Affordable Blood Tests & Health Packages in Delhi</title>
-<meta name="description" content="SwasthaIndia provides home blood test services, affordable diagnostic packages, and surgical supplies in Delhi. Care at your doorstep.">
-<meta name="keywords" content="blood test at home, affordable blood test, SwasthaIndia, diagnostic, surgical items, health checkups, Delhi">
-<meta name="author" content="SwasthaIndia">
-<meta property="og:title" content="SwasthaIndia – Blood Test & Surgical Services in Delhi">
-<meta property="og:description" content="Care at your doorstep – book blood tests online or shop surgical items. Trusted healthcare service in Delhi.">
-<meta property="og:url" content="https://swasthaindia.in/">
-<meta property="og:type" content="website">
-  <!-- Google Font -->
+  <title>SwasthaIndia – Affordable Blood Tests & Health Packages in Delhi</title>
+  <meta name="description" content="SwasthaIndia provides home blood test services, affordable diagnostic packages, and surgical supplies in Delhi. Care at your doorstep.">
+  <meta name="keywords" content="blood test at home, affordable blood test, SwasthaIndia, diagnostic, surgical items, health checkups, Delhi">
+  <meta name="author" content="SwasthaIndia">
+  <meta property="og:title" content="SwasthaIndia – Blood Test & Surgical Services in Delhi">
+  <meta property="og:description" content="Care at your doorstep – book blood tests online or shop surgical items. Trusted healthcare service in Delhi.">
+  <meta property="og:url" content="https://swasthaindia.in/">
+  <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-       body {
+    body {
       font-family: 'Inter', sans-serif;
       background-color: #f5fcff;
       margin: 0;
       padding: 0;
     }
+
     header {
       background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -54,9 +52,11 @@
 
     .nav-links {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       gap: 24px;
       padding: 0 20px 16px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .nav-links a {
@@ -102,8 +102,7 @@
         to { opacity: 1; transform: translateY(0); }
       }
     }
-
-    .floating-banner {
+.floating-banner {
       background: #004d40;
       color: white;
       padding: 10px;
@@ -305,11 +304,13 @@
     font-size: 13px;
     padding: 8px;
   }
-}     
+}
+
   </style>
 </head>
 <body>
-  <header>
+
+<header>
   <div class="topbar">
     <a href="/" class="logo">
       <img src="/logo.png" alt="SwasthaIndia Logo" />
@@ -327,30 +328,48 @@
   </nav>
 </header>
 
-  <!-- WhatsApp Banner -->
-  <div class="floating-banner">
-    💬 Looking for more tests or full body packages?
-    <strong> Chat with us</strong> on
-    <a href="https://wa.me/919911990556" target="_blank">+91-9911990556</a>
-  </div>
+<!-- WhatsApp Banner -->
+<div class="floating-banner">
+  💬 Looking for more tests or full body packages?
+  <strong> Chat with us</strong> on
+  <a href="https://wa.me/919911990556" target="_blank">+91-9911990556</a>
+</div>
 
-  <h1>Book a Blood Test</h1>
-
+<h1>Book a Blood Test</h1>
 <div style="text-align: center; margin: 20px;">
   <input type="text" id="searchInput" placeholder="Search for a test..." style="padding: 10px 15px; width: 300px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px;">
 </div>
 
+<!-- Test cards container -->
+<div id="test-container"></div>
 
-  <!-- Test cards container -->
-  <div id="test-container"></div>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919911990556" class="wa-float" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
+</a>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919911990556" class="wa-float" target="_blank">
-    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
-  </a>
+<!-- JavaScript to Load Test Cards + Hamburger Function -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function toggleMenu(event) {
+      event.stopPropagation();
+      document.getElementById("navLinks").classList.toggle("active");
+    }
 
-  <!-- JavaScript to Load Test Cards -->
-  <script>
+    function handleOutsideClick(e) {
+      const nav = document.getElementById("navLinks");
+      const hamburger = document.querySelector(".hamburger");
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove("active");
+      }
+    }
+
+    document.querySelector(".hamburger").addEventListener("click", toggleMenu);
+    document.body.addEventListener("click", handleOutsideClick);
+  });
+</script>
+
+<script>
   let allTests = [];
 
   function renderTests(data) {
@@ -395,19 +414,16 @@
 
       container.appendChild(card);
 
-// Handle WhatsApp link with auto message
-card.querySelector(".book-btn").addEventListener("click", function (e) {
-  e.preventDefault();
-  const testName = this.getAttribute("data-testname");
-  const message = encodeURIComponent(`Hi SwasthaIndia, I’d like to book the "${testName}" test.`);
-  const waUrl = `https://wa.me/919911990556?text=${message}`;
-  window.open(waUrl, '_blank');
-});
+      card.querySelector(".book-btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        const testName = this.getAttribute("data-testname");
+        const message = encodeURIComponent(`Hi SwasthaIndia, I’d like to book the "${testName}" test.`);
+        const waUrl = `https://wa.me/919911990556?text=${message}`;
+        window.open(waUrl, '_blank');
+      });
+    });
+  }
 
-    }); // ✅ closes forEach
-  } // ✅ closes renderTests
-
-  // Load data from Google Sheets
   fetch("https://script.google.com/macros/s/AKfycbx86AqCtPYZkCRGiMCl-XYWbC6UctZCQnbd7CbPloJon6y9g-jzVKH2L04-GUVwU4t7/exec")
     .then(res => res.json())
     .then(data => {
@@ -421,23 +437,7 @@ card.querySelector(".book-btn").addEventListener("click", function (e) {
         );
         renderTests(filtered);
       });
-    }); // ✅ closes fetch
-<script>
-  function toggleMenu(event) {
-    event.stopPropagation();
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-
-  function handleOutsideClick(e) {
-    const nav = document.getElementById("navLinks");
-    const hamburger = document.querySelector(".hamburger");
-    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-      nav.classList.remove("active");
-    }
-  }
-
-  document.body.addEventListener("click", handleOutsideClick);
+    });
 </script>
-
 </body>
 </html>

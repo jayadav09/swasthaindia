@@ -422,22 +422,25 @@ card.querySelector(".book-btn").addEventListener("click", function (e) {
         renderTests(filtered);
       });
     }); // ✅ closes fetch
-</script>
-  <script>
-  function toggleMenu(event) {
-    event.stopPropagation();
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-
-  function handleOutsideClick(e) {
-    const nav = document.getElementById("navLinks");
-    const hamburger = document.querySelector(".hamburger");
-    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-      nav.classList.remove("active");
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function toggleMenu(event) {
+      event.stopPropagation();
+      document.getElementById("navLinks").classList.toggle("active");
     }
-  }
 
-  document.body.addEventListener("click", handleOutsideClick);
+    function handleOutsideClick(e) {
+      const nav = document.getElementById("navLinks");
+      const hamburger = document.querySelector(".hamburger");
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove("active");
+      }
+    }
+
+    document.querySelector(".hamburger").addEventListener("click", toggleMenu);
+    document.body.addEventListener("click", handleOutsideClick);
+  });
 </script>
+
 </body>
 </html>

@@ -1,127 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | SwasthaIndia</title>
-  <meta name="description" content="SwasthaIndia is your trusted partner in blood tests and home diagnostics. Learn about our mission and story.">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (CDN — no login needed) -->
+  <title>About Us - SwasthaIndia</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #222;
+    }
 
- <style>
-/* Header Styling */
-.site-header {
-  background: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.site-header .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 12px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo img {
-  height: 48px;
-}
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #00838F;
-  font-weight: 600;
-}
-.hamburger {
-  display: none;
-  font-size: 1.6rem;
-  color: #00838F;
-  cursor: pointer;
-}
+    header {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 64px;
-    right: 0;
-    background: white;
-    display: none;
-    flex-direction: column;
-    width: 200px;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  }
-  .nav-links a {
-    margin: 10px 0;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .hamburger {
-    display: block;
-  }
-}
-</style>
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
+    .logo img {
+      height: 48px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #00838F;
+      font-weight: 600;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.6rem;
+      color: #00838F;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background: white;
+        display: none;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 960px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.03);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00838F;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    ul li::before {
+      content: "✔️ ";
+      color: green;
+      margin-right: 6px;
+    }
+
+    footer {
+      background: #00838F;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+    }
+
+    footer .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    footer .social-icons a:hover {
+      color: #ffea00;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header -->
- <!-- Header -->
-<header class="site-header">
-  <div class="container">
-    <a href="/" class="logo">
-      <img src="/logo.png" alt="SwasthaIndia Logo" />
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="/">Home</a>
-      <a href="/my-packages/">Packages</a>
-      <a href="/book-test/">Book Test</a>
-      <a href="/contact/">Contact</a>
-      <a href="/about/">About</a>
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/logo.png" alt="SwasthaIndia Logo" />
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/my-packages/">Packages</a>
+        <a href="/book-test/">Book Test</a>
+        <a href="/contact/">Contact</a>
+        <a href="/about/">About</a>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
-  </div>
-</header>
-   <!-- Main Content -->
-  <main class="container">
+  </header>
+
+  <!-- Main Content -->
+  <main>
     <h1>About Us</h1>
+    <p><strong>SwasthaIndia</strong> is your trusted health partner, bringing diagnostic care to your doorstep. Our mission is to simplify medical testing for every family across India by making it fast, affordable, and accessible from home.</p>
 
-    <div class="highlight">
-      <p><strong>SwasthaIndia</strong> is your trusted health partner, bringing diagnostic care to your doorstep. Our mission is to simplify medical testing for every family across India by making it fast, affordable, and accessible from home.</p>
-    </div>
-
-    <p>We specialize in:</p>
+    <h3>We specialize in:</h3>
     <ul>
-      <li>✔️ Blood test sample collection at home</li>
-      <li>✔️ Affordable health packages with reliable lab reports</li>
-      <li>✔️ CT scans, MRI, and other imaging test bookings</li>
-      <li>✔️ Doctor consultation and personalized health advice</li>
+      <li>Blood test sample collection at home</li>
+      <li>Affordable health packages with reliable lab reports</li>
+      <li>CT scans, MRI, and other imaging test bookings</li>
+      <li>Doctor consultation and personalized health advice</li>
     </ul>
 
-    <div class="highlight">
-      <p>Founded by <strong>Jai Yadav & Anoop Singh</strong>, SwasthaIndia is driven by the values of care, trust, and service. We believe everyone deserves access to quality diagnostics without the stress of traveling to a lab or hospital.</p>
-    </div>
+    <p>Founded by <strong>Jai Yadav & Anoop Singh</strong>, SwasthaIndia is driven by the values of care, trust, and service. We believe everyone deserves access to quality diagnostics without the stress of traveling to a lab or hospital.</p>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 SwasthaIndia. All rights reserved.</p>
+    <p>© 2025 SwasthaIndia. All rights reserved.</p>
     <div class="social-icons">
-      <a href="https://facebook.com/SwasthaIndia" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com/SwasthaIndia" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://wa.me/919911990556" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://youtube.com/@SwasthaIndia" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
   </footer>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>

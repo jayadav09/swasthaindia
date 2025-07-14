@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- ✅ Sticky White Header -->
-<header style="
-  background: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-">
-  <a href="/">
-    <img src="/logo.png" alt="SwasthaIndia Logo" height="50">
-  </a>
-  <nav>
-    <a href="/book-test/" style="margin-left: 24px; text-decoration: none; color: #00796b; font-weight: 600;">Book Test</a>
-    <a href="/my-packages/" style="margin-left: 24px; text-decoration: none; color: #00796b; font-weight: 600;">Packages</a>
-    <a href="/contact/" style="margin-left: 24px; text-decoration: none; color: #00796b; font-weight: 600;">Contact</a>
+<header>
+  <div class="topbar">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="SwasthaIndia Logo" />
+    </a>
+    <div class="hamburger" onclick="toggleMenu(event)">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <nav class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <a href="/my-packages/">Packages</a>
+    <a href="/book-test/">Book Test</a>
+    <a href="/contact/">Contact</a>
+    <a href="/about/">About</a>
   </nav>
 </header>
 <head>
@@ -37,6 +34,84 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    header {
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.logo img {
+  height: 48px;
+}
+
+.hamburger {
+  font-size: 1.8rem;
+  color: #007c91;
+  cursor: pointer;
+  display: none;
+}
+
+/* Desktop Nav */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 20px 16px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007c91;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #00bfa5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    background: white;
+    padding: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f5fcff;
@@ -347,7 +422,21 @@ card.querySelector(".book-btn").addEventListener("click", function (e) {
       });
     }); // ✅ closes fetch
 </script>
+  <script>
+  function toggleMenu(event) {
+    event.stopPropagation();
+    document.getElementById("navLinks").classList.toggle("active");
+  }
 
+  function handleOutsideClick(e) {
+    const nav = document.getElementById("navLinks");
+    const hamburger = document.querySelector(".hamburger");
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove("active");
+    }
+  }
 
+  document.body.addEventListener("click", handleOutsideClick);
+</script>
 </body>
 </html>

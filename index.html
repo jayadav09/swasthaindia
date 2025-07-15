@@ -39,25 +39,96 @@
     }
     body { background: #f5f9fc; color: #333; }
     header {
-      background: #ffffff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
+      background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
+      width: 100%;
     }
-    nav a {
-      margin-left: 24px;
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+    }
+    .logo img {
+      height: 48px;
+    }
+    .hamburger {
+      font-size: 1.8rem;
+      color: #007c91;
+      cursor: pointer;
+      display: none;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      padding: 0 20px 16px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .nav-links a {
       text-decoration: none;
-      color: #00796b;
+      color: #007c91;
       font-weight: 600;
-      transition: color 0.3s ease;
+      font-size: 16px;
+      transition: color 0.3s;
     }
-    nav a:hover {
-      color: #004d40;
+    .nav-links a:hover {
+      color: #00bfa5;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        display: none;
+        background: white;
+        padding: 16px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+      }
+      .nav-links a {
+        margin: 10px 0;
+      }
+      .nav-links.active {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+ .hero-buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+      .hero-buttons .hero-btn {
+        flex: 1 1 48%;
+        justify-content: center;
+        display: flex;
+      }
+
+      .packages {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px;
+        padding: 0 12px !important;
+      }
     }
     .hero-section {
   background: linear-gradient(120deg, #e0f7fa, #ffffff);
@@ -490,23 +561,39 @@ text-align: center;
 .view-all-btn:hover {
   background-color: #005e53;
 }
+@media (max-width: 768px) {
+  #test-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+    padding: 0 12px;
+  }
+  .test-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
 
   </style>
 </head>
 <body>
   <header>
-    <div class="">
-      <img src="logo.png" alt="Logo" style="width: 80px;" />
-
+  <div class="topbar">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="SwasthaIndia Logo" />
+    </a>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
     </div>
-    <nav>
-      <a href="book-test/">Book Test</a>
-      <a href="my-packages/">Packages</a>
-      <a href="contact/">Contact</a>
-      <a href="/about/" class="btn">About Us</a>
-    </nav>
-  </header>
-
+  </div>
+  <nav class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <a href="/my-packages/">Packages</a>
+    <a href="/book-test/">Book Test</a>
+    <a href="/contact/">Contact</a>
+    <a href="/about/">About</a>
+  </nav>
+</header>
   <section class="hero-section">
   <div class="hero-inner">
     <h1>Health Tests at Your Doorstep</h1>
@@ -794,5 +881,23 @@ fetch("https://script.google.com/macros/s/AKfycbx86AqCtPYZkCRGiMCl-XYWbC6UctZCQn
     });
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.getElementById("navLinks");
+    const hamburger = document.querySelector(".hamburger");
+
+    hamburger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      nav.classList.toggle("active");
+    });
+
+    document.body.addEventListener("click", function (e) {
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove("active");
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

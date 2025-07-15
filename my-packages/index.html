@@ -13,32 +13,157 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { margin: 0; background: linear-gradient(to right, #f0f4f8, #ffffff); padding: 0; }
-
-    header { background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; width: 100%; }
-    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; max-width: 1000px; margin: auto; }
-    .logo img { height: 80px; }
+    <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body { background: #f5f9fc; color: #333; }
+    header {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+    }
+    .logo img {
+      height: 48px;
+    }
     .hamburger {
-  font-size: 1.8rem;
-  color: #007c91;
-  cursor: pointer;
-  display: none;$1
-}
-
-    .nav-links { display: flex; justify-content: flex-end; gap: 24px; padding: 0 20px 16px; max-width: 1200px; margin: auto; }
-    .nav-links a { text-decoration: none; color: #007c91; font-weight: 600; font-size: 16px; transition: color 0.3s; }
-    .nav-links a:hover { color: #00bfa5; }
-
-    @media (max-width: 768px) {
-      .nav-links { flex-direction: column; display: none; background: white; padding: 16px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); position: absolute; top: 70px; right: 20px; width: 200px; border-radius: 8px; }
-      .nav-links a { margin: 10px 0; }
-      .nav-links.active { display: flex; animation: fadeIn 0.3s ease; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+      font-size: 1.8rem;
+      color: #007c91;
+      cursor: pointer;
+      display: none;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      padding: 0 20px 16px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #007c91;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #00bfa5;
     }
 
-    h1 { text-align: center; color: #00796b; font-size: 2rem; margin: 30px 0; }
-    .floating-banner { position: sticky; top: 0; z-index: 999; background: #004d40; color: white; padding: 12px; font-size: 15px; text-align: center; font-weight: 500; }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        display: none;
+        background: white;
+        padding: 16px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+      }
+      .nav-links a {
+        margin: 10px 0;
+      }
+      .nav-links.active {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+
+     .hero-buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+      .hero-buttons .hero-btn {
+        flex: 1 1 48%;
+        justify-content: center;
+        display: flex;
+      }
+
+      .packages {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px;
+        padding: 0 12px !important;
+      }
+    }
+    .hero-section {
+  background: linear-gradient(120deg, #e0f7fa, #ffffff);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  color: #004d40;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  line-height: 1.4;
+  text-align: center;
+}
+.hero-btn {
+  background: #007f5f;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #005f45;
+}
+    .hero-btn:hover, .whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+h1 { text-align: center; color: #00796b; font-size: 2rem; margin: 30px 0; }
+.floating-banner { position: sticky; top: 0; z-index: 999; background: #004d40; color: white; padding: 12px; font-size: 15px; text-align: center; font-weight: 500; }
     .floating-banner a { color: #ffeb3b; font-weight: bold; text-decoration: underline; }
 
     .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; }

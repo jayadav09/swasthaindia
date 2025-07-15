@@ -294,23 +294,5 @@ body {
     document.body.addEventListener("click", handleOutsideClick);
   });
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const nav = document.getElementById("navLinks");
-    const hamburger = document.querySelector(".hamburger");
-
-    hamburger.addEventListener("click", function (e) {
-      e.stopPropagation();
-      nav.classList.toggle("active");
-    });
-
-    document.body.addEventListener("click", function (e) {
-      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-        nav.classList.remove("active");
-      }
-    });
-  });
-</script>
-
 </body>
 </html>
